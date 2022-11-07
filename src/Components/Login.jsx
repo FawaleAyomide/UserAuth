@@ -5,6 +5,7 @@ import Home from './Home';
 import useAuth from '../Custom Hooks/useAuth';
 import useInput from '../Custom Hooks/useInput';
 import useToggle from '../Custom Hooks/useToggle';
+import { Helmet } from 'react-helmet-async';
 const LOGIN_URL = ('/auth/login')
 
 const Login = () => {
@@ -70,6 +71,11 @@ const Login = () => {
       ) : (
 
         <div >
+          <Helmet>
+            <title>Login</title>
+            <meta name='description' content="Login to navigate to the home page."/>
+            <link rel="canonical" href="/login" />
+          </Helmet>
           <div >
             <div className="card-body ">
               <form onSubmit={handleSubmit} className='form'>

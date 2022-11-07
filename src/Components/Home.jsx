@@ -1,11 +1,17 @@
 import React from 'react' 
 import { NavLink } from 'react-router-dom'
+import { Helmet } from 'react-helmet-async'
 import illust from '../Img/Layer 2.png'
 
 const Home = ({setLoggedIn}) => {
   
   return (
     <div className='home'>
+      <Helmet>
+            <title>Home</title>
+            <meta name='description' content="This is the home page."/>
+            <link rel="canonical" href="/" />
+          </Helmet>
       <div className="container">
         <div className="row">
       <aside className='col-7'>
