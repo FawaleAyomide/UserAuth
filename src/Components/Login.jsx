@@ -53,13 +53,14 @@ const Login = () => {
         // if (!error?.response) {
         //   setErrorMsg('No Server Response');
         // } else 
-        if (error.response?.status === 400) {
-          setErrorMsg('Missing Email and Password');
-        } else if (error.response?.status === 401) {
-          setErrorMsg('Unauthorized');
-        } else {
-          setErrorMsg('Login Failed');
-        }
+        // if (error.response?.status === 400) {
+        //   setErrorMsg('Missing Email and Password');
+        // } else  (error.response?.status === 401) {
+        //   setErrorMsg('Unauthorized');
+        // } 
+        // else {
+        //   setErrorMsg('Login Failed');
+        // }
         errorRef.current.focus();
      }
 
