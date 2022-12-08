@@ -50,9 +50,10 @@ const Login = () => {
        setLoggedIn(true);
       //  navigate(from, {replace: true});
      } catch (error) {
-        if (!error?.response) {
-          setErrorMsg('No Server Response');
-        } else if (error.response?.status === 400) {
+        // if (!error?.response) {
+        //   setErrorMsg('No Server Response');
+        // } else 
+        if (error.response?.status === 400) {
           setErrorMsg('Missing Email and Password');
         } else if (error.response?.status === 401) {
           setErrorMsg('Unauthorized');
