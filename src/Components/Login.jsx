@@ -5,15 +5,17 @@ import Home from './Home';
 import useAuth from '../Custom Hooks/useAuth';
 import useInput from '../Custom Hooks/useInput';
 import useToggle from '../Custom Hooks/useToggle';
+import { useNavigate } from 'react-router-dom';
+import { useLocation } from 'react-router-dom';
 import { Helmet } from 'react-helmet-async';
 const LOGIN_URL = ('/auth/login')
 
 const Login = () => {
   const { setAuth } = useAuth();
 
-  // const navigate = useNavigate();
-  // const location = useLocation();
-  // const from = location.state?.from?.pathname || '/';
+  const navigate = useNavigate();
+  const location = useLocation();
+  const from = location.state?.from?.pathname || '/';
 
   const userRef = useRef();
   const errorRef = useRef();
@@ -48,19 +50,17 @@ const Login = () => {
        resetEmail();
        setPassword('');
        setLoggedIn(true);
-      //  navigate(from, {replace: true});
+       navigate(from, {replace: true});
      } catch (error) {
-        // if (!error?.response) {
-        //   setErrorMsg('No Server Response');
-        // } else 
-        // if (error.response?.status === 400) {
-        //   setErrorMsg('Missing Email and Password');
-        // } else  (error.response?.status === 401) {
-        //   setErrorMsg('Unauthorized');
-        // } 
-        // else {
-        //   setErrorMsg('Login Failed');
-        // }
+        if (!error?.response) {
+          setErrorMsg('No Server Response');
+        } else if (error.response?.status === 400) {
+          setErrorMsg('Missing Email and Password');
+        } else if (error.response?.status === 401) {
+          setErrorMsg('Unauthorized');
+        } else {
+          setErrorMsg('Login Failed');
+        }
         errorRef.current.focus();
      }
 
