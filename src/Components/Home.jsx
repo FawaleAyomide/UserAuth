@@ -18,10 +18,10 @@ const Home = ({setLoggedIn}) => {
       <h1>Landing Page Design</h1>
       <h3>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sapiente pariatur, fugit mollitia deserunt maiores soluta neque quibusdam laborum commodi praesentium.</h3>
       <div className="bttn .d-sm-flex">
-        <NavLink to='/login' className='btn btn-primary'>
+        {/* <NavLink to='/login' className='btn btn-primary'>
       <h3 className='btt '>Login</h3>
-        </NavLink>
-      <button className='btn btn-secondary ' onClick={() => setLoggedIn(null)}>Logout</button>
+        </NavLink> */}
+      <button className='btn btn-primary ' onClick={() => setLoggedIn(null)}>Logout</button>
       </div>
       </aside>
       <div className='article col-sm' >
