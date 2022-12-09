@@ -1,11 +1,8 @@
 import React from 'react' 
-import { useState } from 'react'
 import { Helmet } from 'react-helmet-async'
 import illust from '../Img/Layer 2.png'
-import Login from './Login'
 
-const Home = () => {
-   const [inputText, setInputText] = useState('');
+const Home = ({inputText}) => {
   
   return (
     <div className='home'>
@@ -21,7 +18,6 @@ const Home = () => {
       <h3>Happy Coding!!</h3>
       <div className="bttn .d-sm-flex">
       <h3 className='btn btn-primary '>{inputText}</h3>
-      <Login setInputText={setInputText}/>
       </div>
       </aside>
       <div className='article col-sm' >

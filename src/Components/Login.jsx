@@ -8,7 +8,7 @@ import useToggle from '../Custom Hooks/useToggle';
 import { Helmet } from 'react-helmet-async';
 // const LOGIN_URL = ('/auth/login')
 
-const Login = ({setInputText}) => {
+const Login = () => {
   // const { setAuth } = useAuth();
 
   // const navigate = useNavigate();
@@ -23,6 +23,7 @@ const Login = ({setInputText}) => {
   const [errorMsg, setErrorMsg] = useState('');
   const [loggedIn, setLoggedIn] = useState(false);
   const [check, toggleCheck] = useToggle('persist', false)
+  const [inputText, setInputText] = useState('');
 
   useEffect(() => {
     userRef.current.focus();
@@ -64,7 +65,6 @@ const Login = ({setInputText}) => {
 
   // }
   const inputHandler = (e) => {
-    // console.log(e.target.value)
     setInputText(e.target.value)
   };
 
