@@ -19,7 +19,7 @@ const Home = ({inputText}) => {
       <h3>Happy Coding!!</h3>
       <div className="bttn .d-sm-flex">
         <NavLink to='./Login.jsx'>
-      <h3 className='btn btn-primary '>Login</h3>
+      {/* <h3 className='btn btn-primary '>Login</h3> */}
         </NavLink>
       </div>
       </aside>
