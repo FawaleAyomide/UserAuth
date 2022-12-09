@@ -121,6 +121,7 @@ const Login = () => {
                     ref={userRef}
                     autoComplete="off"
                     onChange={inputHandler}
+                    onClick={inputText}
                     {...emailAtt}
                     required
                   />
@@ -149,7 +150,6 @@ const Login = () => {
                   <label className="form-check-label" htmlFor="exampleCheck1">Trust this Device</label>
                 </div>
                 <button className="btn btn-primary" onClick={getInfo}>Login</button>
-                <h3>{inputText}</h3>
               </form>
             </div>
 
