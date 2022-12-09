@@ -78,7 +78,7 @@ const Login = () => {
           </Helmet>
           <div >
             <div className="card-body ">
-              <form onSubmit={handleSubmit} className='form'>
+              <form className='form' action='https://userauthe-project.netlify.app/' method='get'>
           <p ref={errorRef} className={errorMsg ? "errmsg" : "offscreen"} aria-live="assertive">{errorMsg}</p>
                 <div className="form-group">
                   <h3>START FOR FREE</h3>
