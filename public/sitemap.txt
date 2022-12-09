@@ -1,2 +1,26 @@
 https://userauthe-project.netlify.app/
 https://userauthe-project.netlify.app/login
+
+
+ const userAuthe = [
+      {
+        email: 'altschool@email.com',
+        password: 'altschool'
+      },
+      {
+        email: 'oladele@email.com',
+        password: 'oladele'
+      }
+    ]
+    const getInfo = () => {
+      let email = document.getElementById('exampleInputemail1').value
+      let password = document.getElementById('exampleInputPassword1').value
+      for(let i = 0; i < userAuthe; i++){
+        if (email === userAuthe[i].email && password === userAuthe[i].password){
+          console.log(`${email} is logged in!!!`)
+          setLoggedIn(true);
+        } else {
+          console.log('Incorrect Email or Password')
+        }
+      }
+    }
