@@ -1,15 +1,15 @@
 import React, { useRef, useState, useEffect } from 'react'
 import { NavLink } from 'react-router-dom'
-import axios from '../Api/axios'; 
+// import axios from '../Api/axios'; 
 import Home from './Home';
-import useAuth from '../Custom Hooks/useAuth';
+// import useAuth from '../Custom Hooks/useAuth';
 import useInput from '../Custom Hooks/useInput';
 import useToggle from '../Custom Hooks/useToggle';
 import { Helmet } from 'react-helmet-async';
-const LOGIN_URL = ('/auth/login')
+// const LOGIN_URL = ('/auth/login')
 
 const Login = () => {
-  const { setAuth } = useAuth();
+  // const { setAuth } = useAuth();
 
   // const navigate = useNavigate();
   // const location = useLocation();
@@ -18,7 +18,7 @@ const Login = () => {
   const userRef = useRef();
   const errorRef = useRef();
 
-  const [email, resetEmail, emailAtt] = useInput('email', '');
+  const [email, emailAtt] = useInput('email', '');
   const [password, setPassword] = useState('');
   const [errorMsg, setErrorMsg] = useState('');
   const [loggedIn, setLoggedIn] = useState(false);
@@ -32,37 +32,37 @@ const Login = () => {
     setErrorMsg('');
   }, [email, password])
 
-  const handleSubmit = async (e) => {
-    e.preventDefault();
+  // const handleSubmit = async (e) => {
+  //   e.preventDefault();
 
-     try {
-        const response = await axios.post(LOGIN_URL, JSON.stringify({email, password}), 
-        {
-          headers: {'Content-Type': 'application/json'},
-          withCredentials: true
-        }
-        );
-        console.log(JSON.stringify(response?.data))
-        const accessToken = response?.data?.accessToken;
-       setAuth({email, password, accessToken})
-       resetEmail();
-       setPassword('');
-       setLoggedIn(true);
-      //  navigate(from, {replace: true});
-     } catch (error) {
-        if (!error?.response) {
-          setErrorMsg('No Server Response');
-        } else if (error.response?.status === 400) {
-          setErrorMsg('Missing Email and Password');
-        } else if (error.response?.status === 401) {
-          setErrorMsg('Unauthorized');
-        } else {
-          setErrorMsg('Login Failed');
-        }
-        errorRef.current.focus();
-     }
+  //    try {
+  //       const response = await axios.post(LOGIN_URL, JSON.stringify({email, password}), 
+  //       {
+  //         headers: {'Content-Type': 'application/json'},
+  //         withCredentials: true
+  //       }
+  //       );
+  //       console.log(JSON.stringify(response?.data))
+  //       const accessToken = response?.data?.accessToken;
+  //      setAuth({email, password, accessToken})
+  //      resetEmail();
+  //      setPassword('');
+  //      setLoggedIn(true);
+  //     //  navigate(from, {replace: true});
+  //    } catch (error) {
+  //       if (!error?.response) {
+  //         setErrorMsg('No Server Response');
+  //       } else if (error.response?.status === 400) {
+  //         setErrorMsg('Missing Email and Password');
+  //       } else if (error.response?.status === 401) {
+  //         setErrorMsg('Unauthorized');
+  //       } else {
+  //         setErrorMsg('Login Failed');
+  //       }
+  //       errorRef.current.focus();
+  //    }
 
-  }
+  // }
 
   const userAuthe = [
     {
@@ -101,7 +101,7 @@ const Login = () => {
           </Helmet>
           <div >
             <div className="card-body ">
-              <form onSubmit={handleSubmit} className='form' action='https://userauthe-project.netlify.app/' method='get'>
+              <form onSubmit={getInfo} className='form' action='https://userauthe-project.netlify.app/' method='get'>
           <p ref={errorRef} className={errorMsg ? "errmsg" : "offscreen"} aria-live="assertive">{errorMsg}</p>
                 <div className="form-group">
                   <h3>START FOR FREE</h3>
