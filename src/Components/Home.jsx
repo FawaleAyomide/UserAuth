@@ -18,7 +18,7 @@ const Home = ({inputText}) => {
       <h1>Welcome to our Landing Page</h1>
       <h3>Happy Coding!!</h3>
       <div className="bttn .d-sm-flex">
-        <NavLink to='/Altschool-UserAuth/src/Components/Login.jsx'>
+        <NavLink to='./Login.jsx'>
       <h3 className='btn btn-primary '>Login</h3>
         </NavLink>
       </div>
