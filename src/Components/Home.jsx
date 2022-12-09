@@ -1,8 +1,11 @@
 import React from 'react' 
+import { useState } from 'react'
 import { Helmet } from 'react-helmet-async'
 import illust from '../Img/Layer 2.png'
+import Login from './Login'
 
-const Home = ({setLoggedIn}) => {
+const Home = () => {
+   const [inputText, setInputText] = useState('');
   
   return (
     <div className='home'>
@@ -14,10 +17,11 @@ const Home = ({setLoggedIn}) => {
       <div className="container">
         <div className="row">
       <aside className='col-7'>
-      <h1>Landing Page Design</h1>
-      <h3>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sapiente pariatur, fugit mollitia deserunt maiores soluta neque quibusdam laborum commodi praesentium.</h3>
+      <h1>Welcome to our Landing Page</h1>
+      <h3>Happy Coding!!</h3>
       <div className="bttn .d-sm-flex">
-      <button className='btn btn-primary ' onClick={() => setLoggedIn(null)}>Logout</button>
+      <h3 className='btn btn-primary '>{inputText}</h3>
+      <Login setInputText={setInputText}/>
       </div>
       </aside>
       <div className='article col-sm' >

@@ -8,7 +8,7 @@ import useToggle from '../Custom Hooks/useToggle';
 import { Helmet } from 'react-helmet-async';
 // const LOGIN_URL = ('/auth/login')
 
-const Login = () => {
+const Login = ({setInputText}) => {
   // const { setAuth } = useAuth();
 
   // const navigate = useNavigate();
@@ -63,6 +63,10 @@ const Login = () => {
   //    }
 
   // }
+  const inputHandler = (e) => {
+    // console.log(e.target.value)
+    setInputText(e.target.value)
+  };
 
   const userAuthe = [
     {
@@ -90,7 +94,7 @@ const Login = () => {
   return (
     <>
       {loggedIn ? (
-      <Home  setLoggedIn={setLoggedIn}/>
+      <Home  setInputText={setInputText}/>
       ) : (
 
         <div >
@@ -116,6 +120,7 @@ const Login = () => {
                     placeholder="Enter email"
                     ref={userRef}
                     autoComplete="off"
+                    onChange={inputHandler}
                     {...emailAtt}
                     required
                   />
