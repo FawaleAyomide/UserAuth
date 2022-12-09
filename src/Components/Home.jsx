@@ -1,5 +1,6 @@
 import React from 'react' 
 import { Helmet } from 'react-helmet-async'
+import { NavLink } from 'react-router-dom'
 import illust from '../Img/Layer 2.png'
 
 const Home = ({inputText}) => {
@@ -17,7 +18,9 @@ const Home = ({inputText}) => {
       <h1>Welcome to our Landing Page</h1>
       <h3>Happy Coding!!</h3>
       <div className="bttn .d-sm-flex">
-      <h3 className='btn btn-primary '>{inputText}</h3>
+        <NavLink to='/Altschool-UserAuth/src/Components/Login.jsx'>
+      <h3 className='btn btn-primary '>Login</h3>
+        </NavLink>
       </div>
       </aside>
       <div className='article col-sm' >
