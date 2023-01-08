@@ -1,9 +1,28 @@
-import React from 'react' 
+import {useState} from 'react' 
 import { Helmet } from 'react-helmet-async'
-import { NavLink } from 'react-router-dom'
-import illust from '../Img/Layer 2.png'
+import { FaTimes } from 'react-icons/fa'
+import Addtask from './Addtask'
 
-const Home = ({inputText}) => {
+const Home = () => {
+  const [task, setTask] = useState('')
+  const [text, setText] = useState('')
+  const [day, setDay] = useState('')
+
+
+  const deleteEvent = (id) => {
+  }
+
+  const addTask = (task) => {
+    console.log(task)
+  }
+
+  const onSubmit = (e) => {
+    e.prevent.default()
+
+
+    setText('')
+    setDay('')
+  }
   
   return (
     <div className='home'>
@@ -13,23 +32,18 @@ const Home = ({inputText}) => {
             <link rel="canonical" href="/" />
           </Helmet>
       <div className="container">
-        <div className="row">
-      <aside className='col-7'>
-      <h1>Welcome to our Landing Page</h1>
-      <h3>Happy Coding!!</h3>
-      <div className="bttn .d-sm-flex">
-        <NavLink to='./Login.jsx'>
-      {/* <h3 className='btn btn-primary '>Login</h3> */}
-        </NavLink>
-      </div>
-      </aside>
-      <div className='article col-sm' >
-       <img src={illust} alt=""  width='350px' height='350px' className="img-fluid"/>
-      </div>
+        <div className="todolist">
+          <form className='form-control' onSubmit={onSubmit}>
+            <h1>Todo List</h1>
+            <input className='input' onChange={(e) => setText(e.target.value)} type="text" placeholder="Enter your task" value={text} />
+            <input className='input' type="text" placeholder="Enter Date & Time" value={day} onChange={(e) => setDay(e.target.value)}/>
+            <button>Submit</button>
+            <div className="saveList">
+              <Addtask  onAdd={addTask}/>
+            </div>
+          </form>
         </div>
       </div>
-      <br />
-      <br />
     </div>
 
     
