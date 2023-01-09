@@ -7,8 +7,8 @@ const Addtask = ({text, todo, todos, setTodos}) => {
   }
   return (
     <div className='List'>
-    <h3>{text}</h3>
-    <FaTrash onClick={deleteHandler} className="fas fa-check"></FaTrash>
+    <li className='todo-list'>{text}</li>
+      <FaTrash onClick={deleteHandler} className='fas fa-trash'/>
     </div>
   )
 }

@@ -7,7 +7,7 @@ const Form = ({ setTextHandler, todos, setTodos, textHandler}) => {
         setTextHandler(e.target.value);
     }
     const onSubmit = (e) => {
-        e.prevent.default()
+        e.preventDefault()
         setTodos([
             ...todos, {text: textHandler, completed: false, id: Math.random() * 1000 }
         ])
@@ -17,11 +17,13 @@ const Form = ({ setTextHandler, todos, setTodos, textHandler}) => {
         <div className="container">
 
          <div className="todolist">
-          <form className='form-control' style={{margin: 'auto'}}>
+          <form className='form-control' onSubmit={onSubmit} style={{margin: 'auto'}}>
             <h1>Todo List</h1>
             <input value={textHandler} onChange={inputText} className='input' required type="text" placeholder="Enter your task" />
-            <button onClick={onSubmit}>Add</button>
-            <Addtask setTodos={setTodos} todos={todos}/>
+            <button>Add</button>
+            {todos.map(todo => (
+        <Addtask  setTodos={setTodos} todo={todo} todos={todos} text={todo.text} id={todo.id}/>
+     ))}
           </form>
         </div>
         </div>
