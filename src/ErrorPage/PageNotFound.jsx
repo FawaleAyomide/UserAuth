@@ -1,6 +1,6 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
-import notFound from '../Img/Free Vector _ Funny error 404 background design.jpg'
+import notFound from '../Img/notFound.png'
 
 const PageNotFound = () => {
   return (

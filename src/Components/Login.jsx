@@ -33,37 +33,6 @@ const Login = () => {
     setErrorMsg('');
   }, [email, password])
 
-  // const handleSubmit = async (e) => {
-  //   e.preventDefault();
-
-  //    try {
-  //       const response = await axios.post(LOGIN_URL, JSON.stringify({email, password}), 
-  //       {
-  //         headers: {'Content-Type': 'application/json'},
-  //         withCredentials: true
-  //       }
-  //       );
-  //       console.log(JSON.stringify(response?.data))
-  //       const accessToken = response?.data?.accessToken;
-  //      setAuth({email, password, accessToken})
-  //      resetEmail();
-  //      setPassword('');
-  //      setLoggedIn(true);
-  //     //  navigate(from, {replace: true});
-  //    } catch (error) {
-  //       if (!error?.response) {
-  //         setErrorMsg('No Server Response');
-  //       } else if (error.response?.status === 400) {
-  //         setErrorMsg('Missing Email and Password');
-  //       } else if (error.response?.status === 401) {
-  //         setErrorMsg('Unauthorized');
-  //       } else {
-  //         setErrorMsg('Login Failed');
-  //       }
-  //       errorRef.current.focus();
-  //    }
-
-  // }
   const inputHandler = (e) => {
     setInputText(e.target.value)
   };

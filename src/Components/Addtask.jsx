@@ -1,11 +1,15 @@
-import React from 'react'
+import {FaTrash} from 'react-icons/fa'
 
-const Addtask = () => {
+const Addtask = ({text, todo, todos, setTodos}) => {
 
-    const id = Math.floor(Math.random() * 10000) + 1
-
+  const deleteHandler = () => {
+    setTodos(todos.filter((el) => el.id !== todo.id))
+  }
   return (
-    <div></div>
+    <div className='List'>
+    <h3>{text}</h3>
+    <FaTrash onClick={deleteHandler} className="fas fa-check"></FaTrash>
+    </div>
   )
 }
 
