@@ -1,6 +1,7 @@
 import { useState } from 'react'
 import { Helmet } from 'react-helmet-async'
 import Form from './Form'
+import Todo from './Todo'
 
 const Home = () => {
   const [textHandler, setTextHandler] = useState('')
@@ -13,6 +14,7 @@ const Home = () => {
             <link rel="canonical" href="/" />
           </Helmet>
           <Form todos={todos} setTodos={setTodos} setTextHandler={setTextHandler} textHandler={textHandler}/>
+          <Todo />
     </div>
 
     
